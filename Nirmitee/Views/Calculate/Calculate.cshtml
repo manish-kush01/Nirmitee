@@ -1,0 +1,121 @@
+﻿@model Nirmitee.Models.Calculate
+@{
+    ViewData["Title"] = "Calculations";
+}
+<form  asp-action="Calculate">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Enter values Here</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="EmployeeName"></label>
+                    </div>
+
+                    <div class="col-8">
+                        <input asp-for="EmployeeName" id="name" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BasicSalary"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="BasicSalary" id="salary" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="daysWorked"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="daysWorked" id="days" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="hraPercentage"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="hraPercentage" id="hra" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="conveyanceAllowance"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="conveyanceAllowance" id="cvallow" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="medicalAllowance"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="medicalAllowance" id="mdallow" class="form-control">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <button onclick="calculateInterest()" type="button" class="btn btn-info w-100">Calculate</button>
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-success w-100">Back</a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label >EmployeeName</label>
+                    </div>
+
+                    <div class="col-8">
+                        <p id="ename">.........</p>
+                    </div>
+                    <br />
+                    <div class="col-4">
+                        <label>Salary</label>
+                    </div>
+
+                    <div class="col-8">
+                        <p id="esalary">...........</p>
+                    </div>
+                    <br />
+                    <div class="col-4">
+                        <label >Taxable Income</label>
+                    </div>
+
+                    <div class="col-8">
+                        <p id="etincome">........</p>
+                    </div>
+                    <br />
+                    <div class="col-4">
+                        <label >Tax Amount</label>
+                    </div>
+
+                    <div class="col-8">
+                        <p id="etamount">.......</p>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="~/js/site.js" ></script>
+
